@@ -17,10 +17,23 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 m-5">
-                <h1>Link Collector</h1>
+                <style>
+                    h1 {
+                        text-align: center;
+                    }
+                
+                    p {
+                        text-align: left;
+                    }
+                
+                    div {
+                        text-align: left;
+                    }
+                </style>
+                <h1 style="color:blue">Link Collector</h1>
             </div>
         </div>
-        <div class="row m-5">
+        <div class="row m-2">
             <div class="col-md-4">
                 <form method="POST" action="/">
                     {% csrf_token %}
@@ -30,15 +43,15 @@
                 <button class="btn btn-primary" type="submit">Scrape</button>
             </div>
             </form>
-            <div class="col-md-6">
-                <a class="btn btn-warning" href="/delete">Delete</a>
+            <div class="col-md-2">
+                <a class="btn btn-danger" href="/delete">Delete</a>
             </div>
 
         </div>
-        <div class="row m-5">
+        <div class="row m-2">
             <div class="col-md-8">
                 <table class="table">
-                    <thead class="thead-dark">
+                    <thead class="table table-hover table-info">
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Name</th>
@@ -48,11 +61,11 @@
                     </thead>
                     <tbody>
                         {% for link in data %}
-                        <tr>
-                            <td>{{link.id}}</td>
-                            <td>{{link.name}}</td>
-                            <td>{{link.address}}</td>
-                        </tr>
+                            <tr>
+                                <td>{{link.id}}</td>
+                                <td>{{link.name}}</td>
+                                <td>{{link.address}}</td>
+                            </tr>
                         {% endfor %}
                     </tbody>
                 </table>
@@ -61,4 +74,5 @@
         </div>
     </div>
 </body>
+
 </html>
